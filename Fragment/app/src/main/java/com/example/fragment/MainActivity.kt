@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val fragmentManager = supportFragmentManager
             val transaction = fragmentManager.beginTransaction()
-//            transaction.add(R.id.fragment, MyFragment(names))
-            transaction.replace(R.id.fragment, MyFragment(names))
+            transaction.add(R.id.fragment, MyFragment(names))
+//            transaction.replace(R.id.fragment, MyFragment(names))
             transaction.addToBackStack(null)
             transaction.commit()
         }
