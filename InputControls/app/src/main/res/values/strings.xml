@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InputControls</string>
+
+    <string-array name="spinner_array">
+        <item>Tuna</item>
+        <item>Lemon</item>
+        <item>Ryan</item>
+    </string-array>
+
+</resources>
