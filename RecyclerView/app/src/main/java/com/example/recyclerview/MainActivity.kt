@@ -2,6 +2,7 @@ package com.example.recyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -14,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.my_recyclerView)
         val myAdapter = MyAdapter(this, getData())
         recyclerView.adapter = myAdapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
     }
 
     private fun getData(): ArrayList<String>{

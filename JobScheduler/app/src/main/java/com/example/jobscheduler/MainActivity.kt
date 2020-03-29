@@ -11,15 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Button
-import android.widget.Toast
 import android.widget.ToggleButton
 import android.app.PendingIntent
 import android.app.NotificationManager
 import android.app.NotificationChannel
-
-
-
-
 
 class MainActivity : AppCompatActivity() {
 

@@ -13,14 +13,15 @@ class MyAdapter(context: Context, private val data: ArrayList<String>)
     /**
      * This lay will be same
      * */
-    private val inflater: LayoutInflater = LayoutInflater.from(context)
+//    private val inflater: LayoutInflater = LayoutInflater.from(context)
 
     /**
      * almost same
      * @param R.layout.item_layout the layout for each item (LinearLayout)
      * */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView: View = inflater.inflate(R.layout.item_layout, parent, false)
+//        val itemView: View = inflater.inflate(R.layout.item_layout, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.linearlayout, parent, false)
         return MyViewHolder(itemView, this)
     }
 
@@ -32,6 +33,7 @@ class MyAdapter(context: Context, private val data: ArrayList<String>)
      * pass data to ViewHolder
      * */
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+//        getItem(po)
         val currentData = data[position]
         holder.textView.text = currentData
     }
