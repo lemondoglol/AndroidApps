@@ -36,7 +36,7 @@
 
         <TextView
             android:id="@+id/word_is_text"
-            android:text="@{@string/quote_format(gameViewModel.word)}"
+            android:text="@{gameViewModel.wordHint}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -53,6 +53,7 @@
 
         <TextView
             android:id="@+id/word_text"
+            android:text="@{@string/quote_format(gameViewModel.word)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
@@ -71,6 +72,7 @@
 
         <TextView
             android:id="@+id/timer_text"
+            android:text="@{gameViewModel.currentTimeString}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
