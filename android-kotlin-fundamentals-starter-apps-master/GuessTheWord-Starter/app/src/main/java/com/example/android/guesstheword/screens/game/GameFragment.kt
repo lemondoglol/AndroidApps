@@ -52,33 +52,20 @@ class GameFragment : Fragment() {
         //        viewModel = ViewModelProvider(requireActivity(), GameViewModel::class.java)
         viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
 
-        viewModel.score.observe(viewLifecycleOwner, Observer {
-            binding.scoreText.text = it.toString()
-        })
+        // binding ViewModel
+        binding.gameViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
-        viewModel.word.observe(viewLifecycleOwner, Observer {
-            binding.wordText.text = it
-        })
+//        viewModel.word.observe(viewLifecycleOwner, Observer {
+//            binding.wordText.text = it
+//        })
 
         viewModel.eventGameFinish.observe(viewLifecycleOwner, Observer {
             if (it) onEndGame()
         })
 
-        binding.correctButton.setOnClickListener { onCorrect() }
-        binding.skipButton.setOnClickListener { onSkip() }
-        binding.endGameButton.setOnClickListener{ onEndGame() }
         return binding.root
 
-    }
-
-    /** Methods for button click handlers **/
-
-    private fun onSkip() {
-        viewModel.onSkip()
-    }
-
-    private fun onCorrect() {
-        viewModel.onCorrect()
     }
 
     /**
