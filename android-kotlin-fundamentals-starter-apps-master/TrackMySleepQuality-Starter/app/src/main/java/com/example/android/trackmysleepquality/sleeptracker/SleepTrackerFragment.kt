@@ -62,6 +62,11 @@ class SleepTrackerFragment : Fragment() {
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
 
+        // recycler view
+        val adapter = SleepNightAdapter()
+        binding.sleepList.adapter = adapter
+
+        // observer
         viewModel.navigateToSleepQuality.observe(this, Observer {it ->
             // important here, it might be null
             it?.let {
@@ -81,6 +86,16 @@ class SleepTrackerFragment : Fragment() {
                         Snackbar.LENGTH_SHORT
                 ).show()
                 viewModel.doneShowingSnackbar()
+            }
+        })
+
+        /**
+         * By supplying the fragment's viewLifecycleOwner as the lifecycle owner,
+         * you can make sure this observer is only active when the RecyclerView is on the screen.
+         * */
+        viewModel.nights.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.submitList(it)
             }
         })
 
