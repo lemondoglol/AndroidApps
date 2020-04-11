@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RoomWithView</string>
+    <string name="add_word">add word</string>
+</resources>
